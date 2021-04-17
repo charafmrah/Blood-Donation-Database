@@ -53,29 +53,30 @@ CREATE TABLE donated (
 );
 
 ------------------------------------------
-1.Set operation
+
+--1 Set operation
 SELECT donor_id
 FROM donor
-WHERE blood_type = A
+WHERE blood_type = 'A'
 UNION
 SELECT donor_id
 FROM donor
-WHERE blood_type = O;
----------------------
-2.Join(with condition)
+WHERE blood_type = 'O';
+
+--2 Join(with condition)
 SELECT fname, lname, blood_type 
 FROM profile, donor;
----------------------
-3.Aggregate operation
+
+--3 Aggregate operation
 SELECT SUM(quantity)
 FROM blood_stock;
----------------------
-4.Nested Queries
+
+--4 Nested Queries
 SELECT blood_type, donor_id
 FROM donor
 WHERE donor_id = 
 (SELECT donor_id 
 FROM donor
 WHERE blood_type = 'O');
----------------------
+
        
