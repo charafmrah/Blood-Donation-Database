@@ -122,7 +122,7 @@ FROM donor
 WHERE donor_id = 
 (SELECT donor_id 
 FROM donor
-WHERE blood_type = 'O');
+WHERE blood_type = 'O-');
                                                                                        
 SELECT *
 FROM   blood_stock
