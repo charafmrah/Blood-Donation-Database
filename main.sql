@@ -70,6 +70,19 @@ INSERT INTO login VALUES ('bestboss', '1234', '002');
 INSERT INTO blood_stock VALUES('222', 3, TO_DATE('18/MAY/2021','DD/MON/YYYY'));
 INSERT INTO donated VALUES ('222', '10002');
 
+INSERT INTO patient VALUES('10003', 'B-');
+INSERT INTO profile (user_id, fname, lname, date_of_birth, patient_id) VALUES ('003', 'Jim', 'Halpert', TO_DATE('01-OCT-1978','DD/MON/YYYY'), '10003');
+INSERT INTO profile_phone_number VALUES('2428942450','003');
+INSERT INTO login VALUES('Jim003','Jim1978','003');
+INSERT INTO blood_given VALUES('10003','222');
+
+INSERT INTO patient VALUES('10004', 'AB+');
+INSERT INTO profile (user_id, fname, lname, date_of_birth, patient_id) VALUES ('004', 'Pam', 'Beesly', TO_DATE('25-MAR-1979','DD/MON/YYYY'), '10004');
+INSERT INTO profile_phone_number VALUES('2429007053','004');
+INSERT INTO login VALUES('Pam004','Pam1979','004');
+INSERT INTO blood_given VALUES('10004','111');
+                                                
+
 --INSERT INTO profile VALUES ('002', 'Dwight', 'Shrute', TO_DATE('3-OCT-2020','DD/MON/YYYY'), '10001', '20001');
 
 -------------------- SOME OPERATIONS --------------------
