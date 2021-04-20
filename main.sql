@@ -11,12 +11,12 @@ drop table donated cascade constraints;
 -------------------- CREATING TABLES --------------------
 CREATE TABLE patient (
     patient_id VARCHAR2(6) PRIMARY KEY,
-    blood_type VARCHAR2(2) NOT NULL
+    blood_type VARCHAR2(3) NOT NULL
 );
 
 CREATE TABLE donor (
     donor_id VARCHAR2(6) PRIMARY KEY,
-    blood_type VARCHAR2(2) NOT NULL
+    blood_type VARCHAR2(3) NOT NULL
 );
 
 CREATE TABLE profile (
