@@ -95,9 +95,19 @@ SELECT donor_id
 FROM donor
 WHERE blood_type = 'O';
 
+SELECT donor_id
+FROM donor
+WHERE blood_type = 'A+'
+UNION
+SELECT donor_id
+FROM donor
+WHERE blood_type = 'O-';
+
 --2 Join(with condition)
 SELECT fname, lname, blood_type 
 FROM profile, donor;
+
+SELECT fname, lname, blood_type FROM profile NATURAL JOIN patient;
 
 --3 Aggregate operation
 SELECT SUM(quantity)
