@@ -87,13 +87,13 @@ INSERT INTO blood_given VALUES('10004','111');
 
 -------------------- SOME OPERATIONS --------------------
 --1 Set operation
-SELECT donor_id
-FROM donor
-WHERE blood_type = 'A'
+SELECT patient_id 
+FROM patient
+WHERE blood_type = 'B-'
 UNION
-SELECT donor_id
-FROM donor
-WHERE blood_type = 'O';
+SELECT patient_id 
+FROM patient
+WHERE blood_type = 'AB-';
 
 SELECT donor_id
 FROM donor
@@ -111,6 +111,9 @@ SELECT fname, lname, blood_type FROM profile NATURAL JOIN patient;
 
 --3 Aggregate operation
 SELECT SUM(quantity)
+FROM blood_stock;
+
+SELECT MIN(quantity)
 FROM blood_stock;
 
 --4 Nested Queries
