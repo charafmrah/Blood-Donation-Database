@@ -104,8 +104,8 @@ FROM donor
 WHERE blood_type = 'O-';
 
 --2 Join(with condition)
-SELECT fname, lname, blood_type 
-FROM profile, donor;
+SELECT fname, lname, date_of_birth 
+FROM profile NATURAL JOIN donor;
 
 SELECT fname, lname, blood_type FROM profile NATURAL JOIN patient;
 
