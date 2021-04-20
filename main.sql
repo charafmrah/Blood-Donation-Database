@@ -5,7 +5,7 @@ drop table profile_phone_number cascade constraints;
 drop table login cascade constraints;
 drop table blood_stock cascade constraints;
 drop table donor cascade constraints;
-drop table blood_given cascade constraints;
+drop table blood_received cascade constraints;
 drop table donated cascade constraints;
 
 -------------------- CREATING TABLES --------------------
@@ -45,7 +45,7 @@ CREATE TABLE blood_stock (
     expiration_date DATE NOT NULL
 );
 
-CREATE TABLE blood_given (
+CREATE TABLE blood_received (
     patient_id VARCHAR2(6) REFERENCES patient(patient_id),
     blood_id VARCHAR2(6) REFERENCES blood_stock(blood_id)
 );
@@ -57,7 +57,18 @@ CREATE TABLE donated (
 
 -------------------- INSERTING --------------------
 INSERT INTO donor VALUES('10001', 'A+');
-INSERT INTO profile (user_id, fname, lname, date_of_birth, donor_id) VALUES ('001', 'Dwight', 'Shrute', TO_DATE('3-OCT-2020','DD/MON/YYYY'), '10001');
+INSERT INTO profile (user_id, fname, lname, date_of_birth, donor_id) VALUES ('001', 'Dwight', 'Shrute', TO_DATE('03/OCT/1989','DD/MON/YYYY'), '10001');
+INSERT INTO profile_phone_number VALUES( '536259875', '001');
+INSERT INTO login VALUES ('dwightshrute', 'assistant2', '001');
+INSERT INTO blood_stock VALUES('111', 2, TO_DATE('20/JUN/2021','DD/MON/YYYY'));
+INSERT INTO donated VALUES ('111', '10001');
+
+INSERT INTO donor VALUES('10002', 'O-');
+INSERT INTO profile (user_id, fname, lname, date_of_birth, donor_id) VALUES ('002', 'Michael', 'Scott', TO_DATE('03/OCT/1975','DD/MON/YYYY'), '10002');
+INSERT INTO profile_phone_number VALUES( '569842257', '002');
+INSERT INTO login VALUES ('bestboss', '1234', '002');
+INSERT INTO blood_stock VALUES('222', 3, TO_DATE('18/MAY/2021','DD/MON/YYYY'));
+INSERT INTO donated VALUES ('222', '10002');
 
 --INSERT INTO profile VALUES ('002', 'Dwight', 'Shrute', TO_DATE('3-OCT-2020','DD/MON/YYYY'), '10001', '20001');
 
@@ -86,5 +97,3 @@ WHERE donor_id =
 (SELECT donor_id 
 FROM donor
 WHERE blood_type = 'O');
-
-       
