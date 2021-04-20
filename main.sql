@@ -128,5 +128,5 @@ SELECT *
 FROM   blood_stock
 WHERE  blood_id IN
    (SELECT blood_id
-   FROM blood_given
+   FROM blood_received
    WHERE blood_id = '111');
