@@ -74,13 +74,13 @@ INSERT INTO patient VALUES('10003', 'B-');
 INSERT INTO profile (user_id, fname, lname, date_of_birth, patient_id) VALUES ('003', 'Jim', 'Halpert', TO_DATE('01/OCT/1978','DD/MON/YYYY'), '10003');
 INSERT INTO profile_phone_number VALUES('2428942450','003');
 INSERT INTO login VALUES('Jim003','Jim1978','003');
-INSERT INTO blood_given VALUES('10003','222');
+INSERT INTO blood_received VALUES('10003','222');
 
 INSERT INTO patient VALUES('10004', 'AB+');
 INSERT INTO profile (user_id, fname, lname, date_of_birth, patient_id) VALUES ('004', 'Pam', 'Beesly', TO_DATE('25/MAR/1979','DD/MON/YYYY'), '10004');
 INSERT INTO profile_phone_number VALUES('2429007053','004');
 INSERT INTO login VALUES('Pam004','Pam1979','004');
-INSERT INTO blood_given VALUES('10004','111');
+INSERT INTO blood_received VALUES('10004','111');
                                                 
 
 --INSERT INTO profile VALUES ('002', 'Dwight', 'Shrute', TO_DATE('3-OCT-2020','DD/MON/YYYY'), '10001', '20001');
@@ -123,3 +123,10 @@ WHERE donor_id =
 (SELECT donor_id 
 FROM donor
 WHERE blood_type = 'O');
+                                                                                       
+SELECT *
+FROM   blood_stock
+WHERE  blood_id IN
+   (SELECT blood_id
+   FROM blood_given
+   WHERE blood_id = '111');
