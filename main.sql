@@ -60,14 +60,14 @@ INSERT INTO donor VALUES('10001', 'A+');
 INSERT INTO profile (user_id, fname, lname, date_of_birth, donor_id) VALUES ('001', 'Dwight', 'Shrute', TO_DATE('03/OCT/1989','DD/MON/YYYY'), '10001');
 INSERT INTO profile_phone_number VALUES( '536259875', '001');
 INSERT INTO login VALUES ('dwightshrute', 'assistant2', '001');
-INSERT INTO blood_stock VALUES('111', 2, TO_DATE('20/JUN/2021','DD/MON/YYYY'));
+INSERT INTO blood_stock VALUES('111', 400, TO_DATE('20/JUN/2021','DD/MON/YYYY'));
 INSERT INTO donated VALUES ('111', '10001');
 
 INSERT INTO donor VALUES('10002', 'O-');
 INSERT INTO profile (user_id, fname, lname, date_of_birth, donor_id) VALUES ('002', 'Michael', 'Scott', TO_DATE('03/OCT/1975','DD/MON/YYYY'), '10002');
 INSERT INTO profile_phone_number VALUES( '569842257', '002');
 INSERT INTO login VALUES ('bestboss', '1234', '002');
-INSERT INTO blood_stock VALUES('222', 3, TO_DATE('18/MAY/2021','DD/MON/YYYY'));
+INSERT INTO blood_stock VALUES('222', 450, TO_DATE('18/MAY/2021','DD/MON/YYYY'));
 INSERT INTO donated VALUES ('222', '10002');
 
 INSERT INTO patient VALUES('10003', 'B-');
