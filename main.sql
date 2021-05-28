@@ -82,9 +82,6 @@ INSERT INTO profile_phone_number VALUES('2429007053','004');
 INSERT INTO login VALUES('Pam004','Pam1979','004');
 INSERT INTO blood_received VALUES('10004','111');
                                                 
-
---INSERT INTO profile VALUES ('002', 'Dwight', 'Shrute', TO_DATE('3-OCT-2020','DD/MON/YYYY'), '10001', '20001');
-
 -------------------- SOME OPERATIONS --------------------
 --1 Set operation
 SELECT patient_id 
