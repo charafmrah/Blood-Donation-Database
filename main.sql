@@ -107,7 +107,8 @@ WHERE blood_type = 'O-';
 SELECT fname, lname, date_of_birth 
 FROM profile NATURAL JOIN donor;
 
-SELECT fname, lname, blood_type FROM profile NATURAL JOIN patient;
+SELECT fname, lname, blood_type
+FROM profile NATURAL JOIN patient;
 
 --3 Aggregate operation
 SELECT SUM(quantity)
@@ -120,9 +121,9 @@ FROM blood_stock;
 SELECT blood_type, donor_id
 FROM donor
 WHERE donor_id = 
-(SELECT donor_id 
-FROM donor
-WHERE blood_type = 'O-');
+    (SELECT donor_id 
+    FROM donor
+    WHERE blood_type = 'O-');
                                                                                        
 SELECT *
 FROM   blood_stock
